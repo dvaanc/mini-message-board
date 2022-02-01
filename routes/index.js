@@ -20,12 +20,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/new', (req, res) => {
-  console.log(req.body.username)
-  console.log(req.body.userMessage)
   messages.push({
-    username: req.body.username,
-    message: req.body.userMessage,
-    date: new Date(),
+    user: req.body.username,
+    text: req.body.userMessage,
+    added: new Date(),
   })
   res.redirect('/')
 })
